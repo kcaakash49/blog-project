@@ -16,6 +16,7 @@ export const SignUpComponent = () => {
     password: "",
   });
   const navigate = useNavigate();
+  
 
   const handleSignup = async () => {
     await signupcall(inputs, navigate)

@@ -3,18 +3,21 @@ import './App.css'
 import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import Blogs from './pages/Blogs'
+import UserLayout from './pages/UserLayout'
 
 function App() {
-  
+
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path = "/signup" element = {<Signup/>}/>
-        <Route path = "/signin" element = {<Signin/>}/>
-        <Route path = "/blogs" element = {<Blogs/>}/>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<UserLayout />}>
+        <Route index element={<Signup />} />
+        <Route path="signin" element={<Signin />} />
+        <Route path="blogs" element={<Blogs />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
   )
 }
 

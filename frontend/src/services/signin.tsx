@@ -6,6 +6,7 @@ export const signinCall = async(inputs: SigninSchema,navigate:NavigateFunction) 
     try{
         const response = await axios.post("http://localhost:8787/api/v1/user/signin",inputs)
         console.log(response)
+        localStorage.setItem('token',response.data.jwt)
         navigate("/blogs")
     }catch(e : unknown){
         console.error("Something happened",e)
