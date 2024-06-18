@@ -1,9 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css'
+
 import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import Blogs from './pages/Blogs'
-import UserLayout from './pages/UserLayout'
+import UserLayout from './layout/UserLayout'
+import BlogDetail from './pages/BlogDetail'
+import PageNotFound from './pages/PageNotFound'
+
 
 function App() {
 
@@ -15,6 +18,8 @@ function App() {
         <Route index element={<Signup />} />
         <Route path="signin" element={<Signin />} />
         <Route path="blogs" element={<Blogs />} />
+        <Route path = "blogs/:id" element = {<BlogDetail/>}/>
+        <Route path = "*" element = {<PageNotFound/>}/>
       </Route>
     </Routes>
   </BrowserRouter>
